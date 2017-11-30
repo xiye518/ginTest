@@ -1,0 +1,15 @@
+#### 搭建开发环境，git,go,goland,mysql
+#### 熟悉gin和gorm，看API文档，了解编码规范
+#### 小任务
+功能需求：
+1. 用户注册，并填写用户基本信息，用户基本信息包括用户名、密码、昵称，用户名不得重复
+2. 用户登录
+3. 登陆之后可以查看所有已注册的用户列表，未登录状态不能查看用户列表
+
+需要提供简单的Web展示页面，以及这三个功能对应的REST API，
+RESP API测试可以通过curl命令或者chrome插件postman
+
+在web页面中，记录用户登陆状态采用cookie的方式
+在REST API里面，通过token来记录用户登陆状态，具体token的原理参考下oauth规范
+
+Web框架采用gin，orm框架用gorm，数据库用mysql
