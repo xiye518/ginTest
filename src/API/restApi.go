@@ -7,6 +7,7 @@ import (
 	"log"
 	"time"
 	"gopkg.in/gin-gonic/gin.v1"
+	"net/http"
 )
 
 func InitDb() *gorm.DB {
@@ -81,7 +82,8 @@ func GetUser(c *gin.Context) {
 	id := c.Params.ByName("id")
 	userId, err := strconv.Atoi(id)
 	if err != nil {
-		log.Println(err)
+		go
+			log.Println(err)
 	}
 	var user User
 	// SELECT * FROM user WHERE id = 1;
@@ -96,6 +98,17 @@ func GetUser(c *gin.Context) {
 	}
 	
 	// curl -i http://localhost:8080/api/v1/user/1
+}
+
+func Login(c *gin.Context) {
+	cookie := &http.Cookie{
+		Name:     "token",
+		Value:    "12345",
+		Path:     "/",
+		HttpOnly: true,
+	}
+	
+	http.SetCookie(c.Writer, cookie)
 }
 
 //更新用户
