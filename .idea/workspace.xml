@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31d09890-f511-4f22-8aa8-24cf987558b1" name="Default" comment="" />
+    <list default="true" id="31d09890-f511-4f22-8aa8-24cf987558b1" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/followGit/ginDemo.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/gormModel/data.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/gormModel/data_test.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/gormModel/userStruct.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/gormdemo/test1/修改表名.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/gormdemo/概述.go" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" afterPath="$PROJECT_DIR$/src/main.go" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,61 +24,56 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="212">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
               <folding>
-                <element signature="e#14#65#0" expanded="true" />
+                <element signature="e#14#148#0" expanded="true" />
+                <element signature="n#!!block;n#GetUsers#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xiye.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xiye/xiye.go">
+      <file leaf-file-name="time.go" pinned="false" current-in-tab="false">
+        <entry file="file://X:/Go/src/time/time.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="260">
+              <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ginDemo.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/followGit/ginDemo.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="10" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="10" />
+              <folding>
+                <element signature="e#15#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gin.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/github.com/gin-gonic/gin/gin.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="274" column="22" lean-forward="false" selection-start-line="274" selection-start-column="22" selection-end-line="274" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="data.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/data.go">
+        <entry file="file://$PROJECT_DIR$/src/gormModel/data.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+            <state relative-caret-position="340">
+              <caret line="20" column="13" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="23" selection-end-column="20" />
               <folding>
-                <element signature="e#15#84#0" expanded="true" />
-                <marker date="1512035767159" expanded="true" signature="805:840" ph="select id, c... tb_baseinfo" />
-                <marker date="1512035767159" expanded="true" signature="805:865" ph="select id,us... tb_userinfo" />
-                <marker date="1512035767159" expanded="true" signature="1268:1347" ph="select id,us... tb_userinfo" />
-                <marker date="1512035767159" expanded="true" signature="1767:1846" ph="select id,us... tb_userinfo" />
-                <marker date="1512035767159" expanded="true" signature="2247:2310" ph="insert into tb_userInfo... " />
-                <marker date="1512035767159" expanded="true" signature="2247:2335" ph="insert into tb_userInfo... " />
+                <element signature="e#19#98#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/data_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="e#15#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="需求.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/需求.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -82,7 +87,15 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>users</find>
+    </findStrings>
+  </component>
   <component name="GOROOT" path="X:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="urls">
       <list>
@@ -97,7 +110,20 @@
         <option value="$PROJECT_DIR$/src/需求.txt" />
         <option value="$PROJECT_DIR$/src/model/user.go" />
         <option value="$PROJECT_DIR$/src/model/data_test.go" />
+        <option value="$PROJECT_DIR$/src/demo/gormdemo.go" />
+        <option value="$PROJECT_DIR$/src/gormdemo/概述.go" />
+        <option value="$PROJECT_DIR$/src/gormdemo/修改表名.go" />
+        <option value="$PROJECT_DIR$/src/gormdemo/test1/修改表名.go" />
+        <option value="$PROJECT_DIR$/src/modelOld/model.go" />
         <option value="$PROJECT_DIR$/src/model/data.go" />
+        <option value="$PROJECT_DIR$/src/model/userData.go" />
+        <option value="$PROJECT_DIR$/src/data/model.go" />
+        <option value="$PROJECT_DIR$/src/gormModel/model.go" />
+        <option value="$PROJECT_DIR$/src/gormModel/userStruct.go" />
+        <option value="$PROJECT_DIR$/src/gormModel/data_test.go" />
+        <option value="$PROJECT_DIR$/src/gormModel/data.go" />
+        <option value="$PROJECT_DIR$/src/followGit/main.go" />
+        <option value="$PROJECT_DIR$/src/followGit/ginDemo.go" />
         <option value="$PROJECT_DIR$/src/main.go" />
       </list>
     </option>
@@ -108,12 +134,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="8" />
-    <option name="y" value="29" />
-    <option name="width" value="1136" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="859" />
+    <option name="y" value="30" />
+    <option name="width" value="1094" />
     <option name="height" value="944" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -141,6 +168,37 @@
               <item name="ginTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ginTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ginTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="followGit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ginTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ginTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gormdemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ginTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ginTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gormdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="test1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ginTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ginTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gormModel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ginTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ginTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="xiye" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -157,6 +215,11 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\ginTest\src\gormdemo\test1" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -170,6 +233,30 @@
     </option>
   </component>
   <component name="RunManager" selected="Go Application.main.go">
+    <configuration name="修改表名.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="ginTest" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/gormdemo/test1/修改表名.go" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
+    <configuration name="ginDemo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="ginTest" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/followGit/ginDemo.go" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
+    <configuration name="main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="ginTest" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/followGit/main.go" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
     <configuration name="main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="ginTest" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -178,32 +265,14 @@
       <filePath value="$PROJECT_DIR$/src/main.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
-    <configuration name="TestInsertUserInfo in data_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+    <configuration name="TestCreatTable in data_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="ginTest" />
-      <working_directory value="$PROJECT_DIR$/src/model" />
+      <working_directory value="$PROJECT_DIR$/src/gormModel" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="model" />
-      <pattern value="^TestInsertUserInfo$" />
-    </configuration>
-    <configuration name="TestQuery in data_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="ginTest" />
-      <working_directory value="$PROJECT_DIR$/src/model" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="model" />
-      <pattern value="^TestQuery$" />
-    </configuration>
-    <configuration name="TestQueryIsExist in data_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="ginTest" />
-      <working_directory value="$PROJECT_DIR$/src/model" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="model" />
-      <pattern value="^TestQueryIsExist$" />
+      <package value="gormModel" />
+      <pattern value="^TestCreatTable$" />
     </configuration>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
@@ -220,18 +289,20 @@
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Go Application.main.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Test.TestQuery in data_test.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.TestQueryIsExist in data_test.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestInsertUserInfo in data_test.go" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Go Application.修改表名.go (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestCreatTable in data_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Application.main.go (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Go Application.ginDemo.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Application.main.go" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Go Application.main.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.TestQuery in data_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.TestInsertUserInfo in data_test.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.TestQueryIsExist in data_test.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Application.ginDemo.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Application.main.go (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestCreatTable in data_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Application.修改表名.go (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -239,6 +310,9 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
+    <history-entry file="TestCreatTable_in_data_test_go - 2017.12.01 at 10h 43m 26s.xml">
+      <configuration name="TestCreatTable in data_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
     <history-entry file="TestInsertUserInfo_in_data_test_go - 2017.11.30 at 17h 04m 50s.xml">
       <configuration name="TestInsertUserInfo in data_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -260,9 +334,6 @@
     <history-entry file="TestInsertUserInfo_in_data_test_go - 2017.11.30 at 17h 17m 18s.xml">
       <configuration name="TestInsertUserInfo in data_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestQuery_in_data_test_go - 2017.11.30 at 17h 04m 33s.xml">
-      <configuration name="TestQuery in data_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestQuery_in_data_test_go - 2017.11.30 at 17h 13m 06s.xml">
       <configuration name="TestQuery in data_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -271,17 +342,18 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="29" width="1136" height="944" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16728625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11513859" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31188118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2742111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3097826" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2241567" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -289,7 +361,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -299,10 +370,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48925412" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3097826" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16809116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28004956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3097826" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29013538" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -328,7 +399,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#14#65#0" expanded="true" />
+            <element signature="e#14#148#0" expanded="true" />
+            <element signature="n#!!block;n#GetUsers#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -365,10 +437,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/user.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://X:/Go/src/testing/testing.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="168">
           <caret line="499" column="17" lean-forward="false" selection-start-line="499" selection-start-column="17" selection-end-line="499" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/data_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding>
+            <element signature="e#15#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gopkg.in/gin-gonic/gin.v1/routergroup.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="101" column="1" lean-forward="true" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gopkg.in/gin-gonic/gin.v1/gin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="251" column="22" lean-forward="false" selection-start-line="251" selection-start-column="22" selection-end-line="251" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -381,28 +487,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/data_test.go">
+    <entry file="file://$PROJECT_DIR$/src/modelOld/model.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#15#36#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/user.go">
+    <entry file="file://$PROJECT_DIR$/src/model/userData.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github.com/jinzhu/gorm/interface.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gormdemo/概述.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#93#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/data.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+        <state relative-caret-position="136">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
             <element signature="e#15#84#0" expanded="true" />
             <marker date="1512035767159" expanded="true" signature="805:840" ph="select id, c... tb_baseinfo" />
@@ -415,12 +537,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gormModel/userStruct.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="31" column="12" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="12" />
+          <folding>
+            <element signature="e#19#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gormModel/data_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#19#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/followGit/ginDemo.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="e#15#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github.com/gin-gonic/gin/gin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="274" column="22" lean-forward="false" selection-start-line="274" selection-start-column="22" selection-end-line="274" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gormModel/data.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <element signature="e#19#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/Go/src/time/time.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gopkg.in/gin-gonic/gin.v1/context.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2052">
+          <caret line="618" column="23" lean-forward="false" selection-start-line="618" selection-start-column="23" selection-end-line="618" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gormdemo/test1/修改表名.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/Go/src/strconv/atoi.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="181" column="32" lean-forward="false" selection-start-line="181" selection-start-column="32" selection-end-line="181" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gopkg.in/gin-gonic/gin.v1/logger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github.com/jinzhu/gorm/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="171" column="13" lean-forward="false" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="212">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
           <folding>
-            <element signature="e#14#65#0" expanded="true" />
+            <element signature="e#14#148#0" expanded="true" />
+            <element signature="n#!!block;n#GetUsers#0" expanded="false" />
           </folding>
         </state>
       </provider>
