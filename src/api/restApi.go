@@ -8,6 +8,7 @@ import (
 	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
 	"model"
+	"strconv"
 )
 
 var Debug bool
@@ -43,11 +44,12 @@ func Login(c *gin.Context) {
 		return
 	}
 	
-	//ToDo 调用登陆请求  返回结果：1.成功	2.失败
 	if success && user.UserName != "" {
+		
+		
 		cookie := &http.Cookie{
 			Name:     "token",
-			Value:    "12345",
+			Value:    inputName+"_"+strconv.Itoa(int(time.Now().Unix())),
 			Path:     "/",
 			HttpOnly: true,
 		}
