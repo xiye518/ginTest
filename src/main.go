@@ -10,11 +10,16 @@ func main() {
 	api.Debug = true
 	r := gin.Default()
 	
+	//authrization:=r.Group("/",jwtauth中间件)
+	//{
+	//	authrization.Get("user",handleFunc)
+	//}
+	
 	v1 := r.Group("api/v1")
 	{
 		v1.POST("/login", api.Login)
 		v1.POST("/reg", api.Register)
-		v1.POST("/index", api.ShowAll)
+		v1.GET("/index", api.ShowAll)
 		
 		//v1.POST("/user", API.PostUser)
 		//v1.GET("/user", API.GetUsers)

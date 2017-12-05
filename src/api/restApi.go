@@ -54,13 +54,14 @@ func Login(c *gin.Context) {
 		
 		http.SetCookie(c.Writer, cookie)
 		// Display JSON result
-		log.Println("用户登陆成功：", user.UserName)
-		c.JSON(200, user)
-		
+		log.Println("登陆成功:",user.UserName)
+		c.JSON(200, gin.H{"msg":"登陆成功!"})
+		return
 	} else {
 		// Display JSON error
 		//c.JSON(404, gin.H{"error": "User not found"})
 		c.JSON(404, gin.H{"error": "用户不存在或账号、密码不对"})
+		return
 	}
 	
 	// curl -i http://localhost:8080/api/v1/login
@@ -106,13 +107,12 @@ func Register(c *gin.Context) {
 		db.Save(&user)
 		// Display JSON result
 		log.Println("用户注册成功：", user.UserName)
-		var userReg model.User
-		db.First(&user, "user_name = ?", inputName)
-		c.JSON(200, gin.H{"用户注册成功success": userReg})
+		c.JSON(200, gin.H{"msg":"注册成功!"})
 	} else {
 		// Display JSON error
 		//c.JSON(404, gin.H{"error": "User not found"})
 		c.JSON(404, gin.H{"error": "用户注册信息有误！"})
+		return
 	}
 	
 	// curl -i http://localhost:8080/api/v1/

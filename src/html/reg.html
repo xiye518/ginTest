@@ -8,6 +8,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<!--
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -20,14 +21,11 @@
         </div>
     </div>
 </nav>
+-->
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-
-        </div>
-        <div class="col-md-4">
-            <form action="http://localhost:8080/api/v1/reg" method="post"
-                  class="form-signin" target="submitFrame">
+            <form action="http://localhost:8080/api/v1/reg" method="post">
                 <h2 class="form-signin-heading">注册到gin+gorm+mysql案例</h2>
 
 
@@ -52,9 +50,6 @@
                 <button type="submit" class="btn btn-primary" id="btn-reg">注册</button>
                 <a href="login.html" class="btn btn-default" id="btn-reg">返回登录</a>
             </form>
-            <iframe style="display: none;" name="submitFrame" src="about:blank"></iframe>
-        </div>
-        <div class="col-md-4">
         </div>
     </div>
 </div>

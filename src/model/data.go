@@ -150,7 +150,7 @@ func QueryGorm(username string)(User){
 	db.LogMode(true)
 	
 	var user User
-	db.First(&user, "user_name = ?", username)
-	//db.Where("user_name",username).First(&user)
+	//db.First(&user, "user_name = ?", username)
+	db.Where("user_name = ?",username).First(&user)
 	return user
 }

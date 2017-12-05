@@ -8,6 +8,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<!--
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -20,14 +21,11 @@
         </div>
     </div>
 </nav>
+-->
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-
-        </div>
-        <div class="col-md-4">
-            <form action="http://localhost:8080/api/v1/login" method="post"
-                  class="form-signin" target="submitFrame">
+            <form action="http://localhost:8080/api/v1/login" method="post">
                 <h2 class="form-signin-heading">登录用户界面</h2>
 
                 <label for="inputName">用户姓名</label>
@@ -41,9 +39,6 @@
                 <button type="submit" class="btn btn-primary" id="btn-login">登录</button>
                 <a href="reg.html" class="btn btn-default">注册</a>
             </form>
-            <iframe style="display: none;" name="submitFrame" src="about:blank"></iframe>
-        </div>
-        <div class="col-md-4">
         </div>
     </div>
 </div>
