@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>登录</title>
+    <title>注册</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +15,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html">登录</a></li>
+                <li><a href="reg.html">注册</a></li>
             </ul>
         </div>
     </div>
@@ -26,20 +26,31 @@
 
         </div>
         <div class="col-md-4">
-            <form action="http://localhost:8080/api/v1/login" method="post"
+            <form action="http://localhost:8080/api/v1/reg" method="post"
                   class="form-signin" target="submitFrame">
-                <h2 class="form-signin-heading">登录用户界面</h2>
+                <h2 class="form-signin-heading">注册到gin+gorm+mysql案例</h2>
+
 
                 <label for="inputName">用户姓名</label>
                 <input type="text" name="inputName" id="inputName" class="form-control"
-                       placeholder="请输入姓名" required autofocus><br>
+                       placeholder="请输入用户名" required
+                       autofocus><br>
 
                 <label for="inputPassword">用户密码</label>
                 <input type="password" name="inputPassword" id="inputPassword" class="form-control"
-                       placeholder="请输入密码" required><br>
+                       placeholder="请输入密码"
+                       required maxLength="16"><br>
+                <!--
+                                <label for="inputPassword2">重复密码</label>
+                                <input type="password" id="inputPassword2" class="form-control"
+                                       placeholder="请再次输入密码" required maxLength="16"><br>-->
 
-                <button type="submit" class="btn btn-primary" id="btn-login">登录</button>
-                <a href="reg.html" class="btn btn-default">注册</a>
+                <label for="inputNickname">个人昵称</label>
+                <input type="text" name="inputNickname" id="inputNickname" class="form-control"
+                       placeholder="请输入昵称" maxLength="16"><br>
+
+                <button type="submit" class="btn btn-primary" id="btn-reg">注册</button>
+                <a href="login.html" class="btn btn-default" id="btn-reg">返回登录</a>
             </form>
             <iframe style="display: none;" name="submitFrame" src="about:blank"></iframe>
         </div>

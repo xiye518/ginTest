@@ -1,4 +1,4 @@
-package API
+package api
 
 import (
 	"github.com/jinzhu/gorm"
@@ -8,7 +8,10 @@ import (
 	"time"
 	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
+	"model"
 )
+
+var Debug bool
 
 func InitDb() *gorm.DB {
 	var err error
@@ -20,12 +23,114 @@ func InitDb() *gorm.DB {
 	db.LogMode(true)
 	
 	// Creating the table
-	if !db.HasTable(&User{}) {
-		db.CreateTable(&User{})
-		db.Set("gorm:table_options", "ENGINE=InnoDB").CreateTable(&User{})
+	if !db.HasTable(&model.User{}) {
+		db.CreateTable(&model.User{})
+		db.Set("gorm:table_options", "ENGINE=InnoDB").CreateTable(&model.User{})
 	}
 	
 	return db
+}
+
+func Login(c *gin.Context) {
+	db := InitDb()
+	defer db.Close()
+	
+	inputName := c.Request.FormValue("inputName")
+	inputPassword := c.Request.FormValue("inputPassword")
+	success, user, err := model.QueryOne(inputName, inputPassword)
+	if err != nil {
+		log.Println(err)
+		c.JSON(505, gin.H{"error": "未知错误,请耐心重试!"})
+		return
+	}
+	
+	//ToDo 调用登陆请求  返回结果：1.成功	2.失败
+	if success && user.UserName != "" {
+		cookie := &http.Cookie{
+			Name:     "token",
+			Value:    "12345",
+			Path:     "/",
+			HttpOnly: true,
+		}
+		
+		http.SetCookie(c.Writer, cookie)
+		// Display JSON result
+		log.Println("用户登陆成功：", user.UserName)
+		c.JSON(200, user)
+		
+	} else {
+		// Display JSON error
+		//c.JSON(404, gin.H{"error": "User not found"})
+		c.JSON(404, gin.H{"error": "用户不存在或账号、密码不对"})
+	}
+	
+	// curl -i http://localhost:8080/api/v1/login
+}
+
+func Register(c *gin.Context) {
+	db := InitDb()
+	defer db.Close()
+	
+	inputName := c.Request.FormValue("inputName")
+	inputPassword := c.Request.FormValue("inputPassword")
+	inputNickname := c.Request.FormValue("inputNickname")
+	log.Println(inputName, inputPassword)
+	
+	var user = &model.User{
+		UserName: inputName,
+		UserPwd:  inputPassword,
+		NickName: inputNickname,
+	}
+	
+	if model.QueryUsernameExist(inputName) {
+		errMsg := gin.H{"error": "用户名已存在!"}
+		log.Println(errMsg)
+		c.JSON(401, errMsg)
+		return
+	}
+	err := model.InsertUserInfo(user)
+	if err != nil {
+		log.Println(err)
+		c.JSON(505, gin.H{"error": "系统错误,请稍后耐心重试!"})
+		return
+	}
+	
+	if user.UserName != "" || user.UserPwd != "" {
+		cookie := &http.Cookie{
+			Name:     "token",
+			Value:    "12345",
+			Path:     "/",
+			HttpOnly: true,
+		}
+		http.SetCookie(c.Writer, cookie)
+		//插入新用户信息
+		db.Save(&user)
+		// Display JSON result
+		log.Println("用户注册成功：", user.UserName)
+		var userReg model.User
+		db.First(&user, "user_name = ?", inputName)
+		c.JSON(200, gin.H{"用户注册成功success": userReg})
+	} else {
+		// Display JSON error
+		//c.JSON(404, gin.H{"error": "User not found"})
+		c.JSON(404, gin.H{"error": "用户注册信息有误！"})
+	}
+	
+	// curl -i http://localhost:8080/api/v1/
+}
+
+func ShowAll(c *gin.Context) {
+	db := InitDb()
+	// Close connection database
+	defer db.Close()
+	
+	var users []model.User
+	// SELECT * FROM users
+	db.Find(&users)
+	
+	// Display JSON result
+	c.JSON(200, users)
+	
 }
 
 //新增用户
@@ -33,7 +138,7 @@ func PostUser(c *gin.Context) {
 	db := InitDb()
 	defer db.Close()
 	
-	var userRegister User
+	var userRegister model.User
 	c.Bind(&userRegister)
 	//ToDo 判断用户名是否存在，如存则无法注册
 	if IsExist(userRegister.UserName) {
@@ -44,7 +149,7 @@ func PostUser(c *gin.Context) {
 	
 	if userRegister.UserName != "" && userRegister.UserPwd != "" {
 		// INSERT INTO "user" (name) VALUES (user.Name);
-		userRegister.Uptdate = NowTime()
+		userRegister.UptDate = NowTime()
 		db.Create(&userRegister)
 		// Display error
 		c.JSON(201, gin.H{"success": userRegister})
@@ -64,7 +169,7 @@ func GetUsers(c *gin.Context) {
 	// Close connection database
 	defer db.Close()
 	
-	var users []User
+	var users []model.User
 	// SELECT * FROM users
 	db.Find(&users)
 	
@@ -85,7 +190,7 @@ func GetUser(c *gin.Context) {
 		go
 			log.Println(err)
 	}
-	var user User
+	var user model.User
 	// SELECT * FROM user WHERE id = 1;
 	db.First(&user, userId)
 	
@@ -100,17 +205,6 @@ func GetUser(c *gin.Context) {
 	// curl -i http://localhost:8080/api/v1/user/1
 }
 
-func Login(c *gin.Context) {
-	cookie := &http.Cookie{
-		Name:     "token",
-		Value:    "12345",
-		Path:     "/",
-		HttpOnly: true,
-	}
-	
-	http.SetCookie(c.Writer, cookie)
-}
-
 //更新用户
 func UpdateUser(c *gin.Context) {
 	db := InitDb()
@@ -122,22 +216,22 @@ func UpdateUser(c *gin.Context) {
 	if err != nil {
 		log.Println(err)
 	}
-	var user User
+	var user model.User
 	// SELECT * FROM user WHERE id = 1;
 	db.First(&user, userId)
 	
 	if user.UserName != "" && user.UserPwd != "" {
 		
 		if user.Id != 0 {
-			var newUser User
+			var newUser model.User
 			c.Bind(&newUser)
 			
-			result := User{
+			result := model.User{
 				Id:       user.Id,
 				UserName: newUser.UserName,
 				UserPwd:  newUser.UserPwd,
 				NickName: newUser.NickName,
-				Uptdate:  NowTime(),
+				UptDate:  NowTime(),
 			}
 			
 			db.Save(&result)
@@ -168,7 +262,7 @@ func DeleteUser(c *gin.Context) {
 	if err != nil {
 		log.Println(err)
 	}
-	var user User
+	var user model.User
 	// SELECT * FROM user WHERE id = 1;
 	db.First(&user, userId)
 	
@@ -185,41 +279,23 @@ func DeleteUser(c *gin.Context) {
 	// curl -i -X DELETE http://localhost:8080/api/v1/user/1
 }
 
-type User struct {
-	Id       int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
-	UserName string `gorm:"not null" form:"username" json:"username"`
-	UserPwd  string `gorm:"not null" form:"userpwd" json:"userpwd"`
-	NickName string `gorm:"" form:"nickname" json:"nickname"`
-	Uptdate  string `gorm:"not null" form:"uptdate" json:"uptdate"`
-	//Uptdate   *time.Time `gorm:"not null" form:"uptdate" json:"uptdate"`
-}
-
-func (User) TableName() string {
-	return "user"
-}
+//type User struct {
+//	Id       int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
+//	UserName string `gorm:"not null" form:"username" json:"username"`
+//	UserPwd  string `gorm:"not null" form:"userpwd" json:"userpwd"`
+//	NickName string `gorm:"" form:"nickname" json:"nickname"`
+//	Uptdate  string `gorm:"not null" form:"uptdate" json:"uptdate"`
+//}
 
 func NowTime() string {
 	return time.Now().Format("2003-01-02 15:04:05")
 }
 
-//func IsExist(username string) (bool) {
-//	db := InitDb()
-//	defer db.Close()
-//
-//	var user User
-//	db.Where("user_name = ?", username).First(&user).RecordNotFound()
-//	if user.Id != 0 {
-//		return true
-//	}
-//
-//	return false
-//}
-
 func IsExist(username string) (bool) {
 	db := InitDb()
 	defer db.Close()
 	
-	var user User
+	var user model.User
 	result := db.Where("user_name = ?", username).First(&user).RecordNotFound()
 	return !result
 }

@@ -25,17 +25,38 @@ func TestQueryIsExist(t *testing.T) {
 	t.Log(isExist)
 }
 
+func TestQueryUsernameExist(t *testing.T) {
+	isExist:=QueryUsernameExist("xiye1")
+	t.Log(isExist)
+}
+
 func TestInsertUserInfo(t *testing.T) {
 	user := &User{
-		UserName: "xiyang",
-		UserPwd:  "123456",
-		NickName: "哈卖批",
+		UserName: "xiye",
+		UserPwd:  "123",
+		NickName: "godfather",
 	}
+	QueryIsExist(user.UserName)
+	
 	err := InsertUserInfo(user)
 	if err != nil {
 		t.Fatal(err)
 	}
 	
-	user,err = QueryOne(user.UserName)
+	_,user,err = QueryOne(user.UserName,user.UserPwd)
 	t.Logf("新增成功，用户信息：%v",user)
 }
+
+func TestQueryOne(t *testing.T) {
+	_,user,err := QueryOne("xiye","123")
+	if err!=nil{
+		t.Fatal(err)
+	}
+	t.Logf("查询成功，用户信息：%v",user)
+}
+
+func TestQueryGorm(t *testing.T) {
+	user:=QueryGorm("xiye")
+	t.Log(user)
+}
+

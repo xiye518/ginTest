@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
 	"log"
+	"github.com/jinzhu/gorm"
 )
 
 var db *sql.DB
@@ -15,7 +16,7 @@ var db *sql.DB
 
 func init() {
 	var err error
-	db, err = sql.Open("mysql", "root:123456@tcp(localhost:3306)/test?charset=utf8")
+	db, err = sql.Open("mysql", "root:123456@tcp(localhost:3306)/gorm?charset=utf8")
 	if err != nil {
 		panic(err.Error())
 	}
@@ -42,15 +43,13 @@ CREATE TABLE tb_userInfo(
 */
 func Query() (users []*User, err error) {
 	users = make([]*User, 0)
-	rows, err := db.Query("select id,username,userpwd,nickname,uptdate FROM tb_userinfo")
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,uptdate FROM user")
 	if err != nil {
 		return users, err
 	}
 	defer rows.Close()
 	for rows.Next() {
-		var user *User = &User{
-		
-		}
+		var user *User = &User{}
 		err = rows.Scan(&user.Id, &user.UserName, &user.UserPwd, &user.NickName, &user.UptDate)
 		if err != nil {
 			return users, err
@@ -62,16 +61,13 @@ func Query() (users []*User, err error) {
 }
 
 func QueryIsExist(username string) (bool, *User, error) {
-	var user *User
-	rows, err := db.Query("select id,username,userpwd,nickname,uptdate FROM tb_userinfo where username = ?", username)
+	var user *User = &User{}
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,uptdate user where user_name = ?", username)
 	if err != nil {
 		return false, user, err
 	}
 	defer rows.Close()
 	for rows.Next() {
-		var user *User = &User{
-		
-		}
 		err = rows.Scan(&user.Id, &user.UserName, &user.UserPwd, &user.NickName, &user.UptDate)
 		if err != nil {
 			return false, user, err
@@ -83,34 +79,78 @@ func QueryIsExist(username string) (bool, *User, error) {
 	return false, user, nil
 }
 
-func QueryOne(username string) ( *User, error) {
-	var user *User
-	rows, err := db.Query("select id,username,userpwd,nickname,uptdate FROM tb_userinfo where username = ?", username)
+func QueryUsernameExist(username string) (success bool) {
+	var user *User = &User{}
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,uptdate from user where user_name = ?", username)
 	if err != nil {
-		return  user, err
+		return
 	}
 	defer rows.Close()
 	for rows.Next() {
-		var user *User = &User{
-		
-		}
 		err = rows.Scan(&user.Id, &user.UserName, &user.UserPwd, &user.NickName, &user.UptDate)
 		if err != nil {
-			return  user, err
+			return
 		}
 		
-		return  user, nil
+		success = true
+		return
 	}
 	
-	return  user, nil
+	return
+}
+
+func QueryOne(username,userpwd string ) (bool, *User, error) {
+	var success  = false
+	var user *User = &User{}
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,uptdate FROM user where user_name = ? and user_pwd = ?", username,userpwd)
+	if err != nil {
+		return  success,user, err
+	}
+	defer rows.Close()
+	for rows.Next() {
+		err = rows.Scan(&user.Id, &user.UserName, &user.UserPwd, &user.NickName, &user.UptDate)
+		if err != nil {
+			return  success,user, err
+		}
+		
+		success = true
+		return  success,user, nil
+	}
+	
+	return  success,user, nil
 }
 
 func InsertUserInfo(user *User) (err error) {
 	//用户注册调用	用户名、密码、昵称，用户名不得重复
-	_, err = db.Exec(`insert into tb_userInfo  (UserName ,userPwd,nickName,uptdate)  values(?,?,?,localtime())`, user.UserName, user.UserPwd, user.NickName)
+	_, err = db.Exec(`insert into user  (user_name,user_pwd,nick_name,uptdate)  values(?,?,?,localtime())`, user.UserName, user.UserPwd, user.NickName)
 	if err != nil {
 		return err
 	}
 	
 	return nil
+}
+
+func RegisterUser(user *User) (err error) {
+	//用户注册调用	用户名、密码、昵称，用户名不得重复
+	_, err = db.Exec(`insert into user  (user_name,user_pwd,nick_name,uptdate)  values(?,?,?,localtime())`, user.UserName, user.UserPwd, user.NickName)
+	if err != nil {
+		return err
+	}
+	
+	return nil
+}
+
+func QueryGorm(username string)(User){
+	var err error
+	db, err := gorm.Open("mysql", "root:123456@tcp(localhost:3306)/gorm?charset=utf8")
+	if err != nil {
+		panic("failed to connect database")
+	}
+	//defer db.Close()
+	db.LogMode(true)
+	
+	var user User
+	db.First(&user, "user_name = ?", username)
+	//db.Where("user_name",username).First(&user)
+	return user
 }
