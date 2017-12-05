@@ -8,7 +8,6 @@ import (
 	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
 	"model"
-	"strconv"
 )
 
 var Debug bool
@@ -45,11 +44,9 @@ func Login(c *gin.Context) {
 	}
 	
 	if success && user.UserName != "" {
-		
-		
 		cookie := &http.Cookie{
 			Name:     "token",
-			Value:    inputName+"_"+strconv.Itoa(int(time.Now().Unix())),
+			Value:    "123456",
 			Path:     "/",
 			HttpOnly: true,
 		}
@@ -121,17 +118,31 @@ func Register(c *gin.Context) {
 }
 
 func ShowAll(c *gin.Context) {
-	db := InitDb()
-	// Close connection database
-	defer db.Close()
+	//if cookie, err := c.Request.Cookie("token"); err==nil{
+	//
+	//}
+	if cookie, err := c.Request.Cookie("token"); err==nil{
+		//判断token值是否正确
+		token:=cookie.Value
+		if token=="123456"{
+			db := InitDb()
+			// Close connection database
+			defer db.Close()
+			
+			var users []model.User
+			// SELECT * FROM users
+			db.Find(&users)
+			
+			// Display JSON result
+			c.JSON(200, users)
+			return
+		}
+		c.JSON(403, gin.H{"error":"token验证失败"})
+		return
+	}
 	
-	var users []model.User
-	// SELECT * FROM users
-	db.Find(&users)
-	
-	// Display JSON result
-	c.JSON(200, users)
-	
+	c.JSON(501, gin.H{"error":"验证失败!"})
+	return
 }
 
 func NowTime() string {

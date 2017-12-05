@@ -154,3 +154,8 @@ func QueryGorm(username string)(User){
 	db.Where("user_name = ?",username).First(&user)
 	return user
 }
+
+func InsertToken()(string){
+	
+	return ""
+}

@@ -21,3 +21,8 @@ func (User) TableName() string {
 	return "user"
 }
 
+type Token struct {
+	Id      int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
+	Value   string `gorm:"not null" form:"value" json:"value"`
+	UptDate string `gorm:"not null" form:"uptdate" json:"uptdate"`
+}
