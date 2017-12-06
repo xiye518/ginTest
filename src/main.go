@@ -19,6 +19,7 @@ func main() {
 	{
 		v1.POST("/login", api.Login)
 		v1.POST("/reg", api.Register)
+		v1.GET("/reg", api.Register)
 		v1.GET("/show", api.ShowAll)
 		
 		//v1.POST("/user", API.PostUser)

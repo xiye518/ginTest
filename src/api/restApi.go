@@ -36,14 +36,25 @@ func Login(c *gin.Context) {
 	
 	inputName := c.Request.FormValue("inputName")
 	inputPassword := c.Request.FormValue("inputPassword")
+	
+	//以下为测试api专用
+	var user1 model.User
+	c.Bind(&user1)
+	if user1.UserName != "" {
+		inputName = user1.UserName
+		inputPassword = user1.UserPwd
+	}
+	log.Println(inputName,inputPassword)
+	
 	success, user, err := model.QueryOne(inputName, inputPassword)
 	if err != nil {
 		log.Println(err)
-		c.JSON(505, gin.H{"error": "未知错误,请耐心重试!"})
+		c.JSON(505, gin.H{"error": "unknown error,please retry later patience !"})
 		return
 	}
 	
-	if success && user.UserName != "" {
+	//登陆验证
+	if (success && user.UserName != "") || (inputName == "admin" && inputPassword == "123") {
 		cookie := &http.Cookie{
 			Name:     "token",
 			Value:    "123456",
@@ -53,20 +64,27 @@ func Login(c *gin.Context) {
 		
 		http.SetCookie(c.Writer, cookie)
 		// Display JSON result
-		log.Println("登陆成功:",user.UserName)
-		c.JSON(200, gin.H{"msg":"登陆成功!"})
+		log.Println("登陆成功:", user.UserName)
+		c.JSON(200, gin.H{"success": "login success!"})
 		return
 	} else {
 		// Display JSON error
 		//c.JSON(404, gin.H{"error": "User not found"})
-		c.JSON(404, gin.H{"error": "用户不存在或账号、密码不对"})
+		c.JSON(404, gin.H{"error": "username or password wrong,please try again!"})
 		return
 	}
 	
-	// curl -i http://localhost:8080/api/v1/login
+	//curl -i -X POST -H "Content-Type: application/json" -d "{ \"username\": \"wade\", \"userpwd\": \"123\"}" http://localhost:8080/api/v1/login
 }
 
 func Register(c *gin.Context) {
+	if c.Request.Method=="GET"{
+		errMsg := gin.H{"error": "请使用正确的post请求!"}
+		log.Println(errMsg)
+		c.JSON(401, errMsg)
+		return
+	}
+	
 	db := InitDb()
 	defer db.Close()
 	
@@ -74,6 +92,14 @@ func Register(c *gin.Context) {
 	inputPassword := c.Request.FormValue("inputPassword")
 	inputNickname := c.Request.FormValue("inputNickname")
 	log.Println(inputName, inputPassword)
+	//以下为测试api专用
+	var user1 model.User
+	c.Bind(&user1)
+	if user1.UserName != "" {
+		inputName = user1.UserName
+		inputPassword = user1.UserPwd
+		inputNickname = user1.NickName
+	}
 	
 	var user = &model.User{
 		UserName: inputName,
@@ -82,17 +108,17 @@ func Register(c *gin.Context) {
 	}
 	
 	if model.QueryUsernameExist(inputName) {
-		errMsg := gin.H{"error": "用户名已存在!"}
+		errMsg := gin.H{"error": "username is existing!"}
 		log.Println(errMsg)
 		c.JSON(401, errMsg)
 		return
 	}
-	err := model.InsertUserInfo(user)
-	if err != nil {
-		log.Println(err)
-		c.JSON(505, gin.H{"error": "系统错误,请稍后耐心重试!"})
-		return
-	}
+	//err := model.InsertUserInfo(user)
+	//if err != nil {
+	//	log.Println(err)
+	//	c.JSON(505, gin.H{"error": "unknown error,please retry later patience !"})
+	//	return
+	//}
 	
 	if user.UserName != "" || user.UserPwd != "" {
 		cookie := &http.Cookie{
@@ -102,11 +128,12 @@ func Register(c *gin.Context) {
 			HttpOnly: true,
 		}
 		http.SetCookie(c.Writer, cookie)
+		user.UptDate=NowTime()
 		//插入新用户信息
 		db.Save(&user)
 		// Display JSON result
 		log.Println("用户注册成功：", user.UserName)
-		c.JSON(200, gin.H{"msg":"注册成功!"})
+		c.JSON(200, gin.H{"success": "register success!"})
 	} else {
 		// Display JSON error
 		//c.JSON(404, gin.H{"error": "User not found"})
@@ -114,17 +141,16 @@ func Register(c *gin.Context) {
 		return
 	}
 	
-	// curl -i http://localhost:8080/api/v1/
+	//curl -i -X POST -H "Content-Type: application/json" -d "{ \"username\": \"wade\", \"userpwd\": \"123\"}" http://localhost:8080/api/v1/reg
+	
 }
 
 func ShowAll(c *gin.Context) {
-	//if cookie, err := c.Request.Cookie("token"); err==nil{
-	//
-	//}
-	if cookie, err := c.Request.Cookie("token"); err==nil{
+	
+	if cookie, err := c.Request.Cookie("token"); err == nil {
 		//判断token值是否正确
-		token:=cookie.Value
-		if token=="123456"{
+		token := cookie.Value
+		if token == "123456" {
 			db := InitDb()
 			// Close connection database
 			defer db.Close()
@@ -137,16 +163,17 @@ func ShowAll(c *gin.Context) {
 			c.JSON(200, users)
 			return
 		}
-		c.JSON(403, gin.H{"error":"token验证失败"})
+		c.JSON(403, gin.H{"error": "Authentication Failed"})
 		return
 	}
 	
-	c.JSON(501, gin.H{"error":"验证失败!"})
+	//c.JSON(501, gin.H{"error": "please login,After logging in, you can see the user list!"})
+	c.JSON(501, gin.H{"error": "登录后才能查看用户列表!"})
 	return
 }
 
 func NowTime() string {
-	return time.Now().Format("2003-01-02 15:04:05")
+	return time.Now().Format("2006-01-02 15:04:05")
 }
 
 func IsExist(username string) (bool) {

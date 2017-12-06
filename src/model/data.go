@@ -43,7 +43,7 @@ CREATE TABLE tb_userInfo(
 */
 func Query() (users []*User, err error) {
 	users = make([]*User, 0)
-	rows, err := db.Query("select id,user_name,user_pwd,nick_name,uptdate FROM user")
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,upt_date FROM user")
 	if err != nil {
 		return users, err
 	}
@@ -62,7 +62,7 @@ func Query() (users []*User, err error) {
 
 func QueryIsExist(username string) (bool, *User, error) {
 	var user *User = &User{}
-	rows, err := db.Query("select id,user_name,user_pwd,nick_name,uptdate user where user_name = ?", username)
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,upt_date user where user_name = ?", username)
 	if err != nil {
 		return false, user, err
 	}
@@ -81,7 +81,7 @@ func QueryIsExist(username string) (bool, *User, error) {
 
 func QueryUsernameExist(username string) (success bool) {
 	var user *User = &User{}
-	rows, err := db.Query("select id,user_name,user_pwd,nick_name,uptdate from user where user_name = ?", username)
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,upt_date from user where user_name = ?", username)
 	if err != nil {
 		return
 	}
@@ -99,30 +99,30 @@ func QueryUsernameExist(username string) (success bool) {
 	return
 }
 
-func QueryOne(username,userpwd string ) (bool, *User, error) {
-	var success  = false
+func QueryOne(username, userpwd string) (bool, *User, error) {
+	var success = false
 	var user *User = &User{}
-	rows, err := db.Query("select id,user_name,user_pwd,nick_name,uptdate FROM user where user_name = ? and user_pwd = ?", username,userpwd)
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,upt_date FROM user where user_name = ? and user_pwd = ?", username, userpwd)
 	if err != nil {
-		return  success,user, err
+		return success, user, err
 	}
 	defer rows.Close()
 	for rows.Next() {
 		err = rows.Scan(&user.Id, &user.UserName, &user.UserPwd, &user.NickName, &user.UptDate)
 		if err != nil {
-			return  success,user, err
+			return success, user, err
 		}
 		
 		success = true
-		return  success,user, nil
+		return success, user, nil
 	}
 	
-	return  success,user, nil
+	return success, user, nil
 }
 
 func InsertUserInfo(user *User) (err error) {
 	//用户注册调用	用户名、密码、昵称，用户名不得重复
-	_, err = db.Exec(`insert into user  (user_name,user_pwd,nick_name,uptdate)  values(?,?,?,localtime())`, user.UserName, user.UserPwd, user.NickName)
+	_, err = db.Exec(`insert into user  (user_name,user_pwd,nick_name,upt_date)  values(?,?,?,localtime())`, user.UserName, user.UserPwd, user.NickName)
 	if err != nil {
 		return err
 	}
@@ -130,9 +130,9 @@ func InsertUserInfo(user *User) (err error) {
 	return nil
 }
 
-func RegisterUser(user *User) (err error) {
+func Register(username, userpwd, nickname string) (err error) {
 	//用户注册调用	用户名、密码、昵称，用户名不得重复
-	_, err = db.Exec(`insert into user  (user_name,user_pwd,nick_name,uptdate)  values(?,?,?,localtime())`, user.UserName, user.UserPwd, user.NickName)
+	_, err = db.Exec(`insert into user  (user_name,user_pwd,nick_name,upt_date)  values(?,?,?,localtime())`, username, userpwd, nickname)
 	if err != nil {
 		return err
 	}
@@ -140,7 +140,7 @@ func RegisterUser(user *User) (err error) {
 	return nil
 }
 
-func QueryGorm(username string)(User){
+func QueryGorm(username string) (User) {
 	var err error
 	db, err := gorm.Open("mysql", "root:123456@tcp(localhost:3306)/gorm?charset=utf8")
 	if err != nil {
@@ -151,11 +151,11 @@ func QueryGorm(username string)(User){
 	
 	var user User
 	//db.First(&user, "user_name = ?", username)
-	db.Where("user_name = ?",username).First(&user)
+	db.Where("user_name = ?", username).First(&user)
 	return user
 }
 
-func InsertToken()(string){
+func InsertToken() (string) {
 	
 	return ""
 }

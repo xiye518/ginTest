@@ -32,7 +32,7 @@ func PostUser(c *gin.Context) {
 		c.JSON(422, gin.H{"error": "Fields are empty"})
 	}
 	
-	// curl -i -X POST -H "Content-Type: application/json" -d "{ \"username\": \"wuqilong\", \"UserPwd\": \"123456\", \"nickname\": \"nicheng\", \"uptdate\": \"2017-12-01 15:34:29\" }" http://localhost:8080/api/v1/user
+	// curl -i -X POST -H "Content-Type: application/json" -d "{ \"username\": \"wuqilong\", \"UserPwd\": \"123456\", \"nickname\": \"nicheng\", \"upt_date\": \"2017-12-01 15:34:29\" }" http://localhost:8080/api/v1/user
 	// curl -i -X POST -H "Content-Type: application/json" -d "{ \"username\": \"james\", \"UserPwd\": \"heat\", \"nickname\": \"king\"}" http://localhost:8080/api/v1/user
 }
 
@@ -121,7 +121,7 @@ func UpdateUser(c *gin.Context) {
 		c.JSON(422, gin.H{"error": "Fields are empty"})
 	}
 	
-	// curl -i -X PUT -H "Content-Type: application/json" -d "{ \"username\": \"wade\", \"UserPwd\": \"123456\", \"nickname\": \"shandianxia\", \"uptdate\": \"2017-12-01 15:39:29\" }" http://localhost:8080/api/v1/user/1
+	// curl -i -X PUT -H "Content-Type: application/json" -d "{ \"username\": \"wade\", \"UserPwd\": \"123456\", \"nickname\": \"shandianxia\", \"upt_date\": \"2017-12-01 15:39:29\" }" http://localhost:8080/api/v1/user/1
 	// curl -i -X PUT -H "Content-Type: application/json" -d "{ \"username\": \"dwaen wade\", \"UserPwd\": \"god\", \"nickname\": \"shandianxia\" }" http://localhost:8080/api/v1/user/1
 }
 

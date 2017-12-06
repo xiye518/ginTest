@@ -60,3 +60,18 @@ func TestQueryGorm(t *testing.T) {
 	t.Log(user)
 }
 
+func TestRegister(t *testing.T) {
+	username, userpwd, nickname:="","",""
+	err:=Register(username, userpwd, nickname)
+	if err!=nil{
+		t.Fatal(err)
+	}
+	
+	_,user,err := QueryOne(username,userpwd)
+	if err!=nil{
+		t.Fatal(err)
+	}
+	t.Logf("插入成功，用户信息：%v",user)
+	//t.Log(username, userpwd, nickname)
+}
+
