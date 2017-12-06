@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="31d09890-f511-4f22-8aa8-24cf987558b1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/api/restApi.go" afterPath="$PROJECT_DIR$/src/api/restApi.go" />
-      <change beforePath="$PROJECT_DIR$/src/main.go" afterPath="$PROJECT_DIR$/src/main.go" />
+      <change beforePath="$PROJECT_DIR$/src/model/data.go" afterPath="$PROJECT_DIR$/src/model/user.go" />
+      <change beforePath="$PROJECT_DIR$/src/model/data_test.go" afterPath="$PROJECT_DIR$/src/model/user_test.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="restApi.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="restApi.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/restApi.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
@@ -71,41 +71,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/data.go">
+      <file leaf-file-name="user.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/user.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="128" column="4" lean-forward="true" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
+            <state relative-caret-position="-1071">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#15#110#0" expanded="true" />
-                <marker date="1512524196011" expanded="true" signature="831:888" ph="select id,us... user" />
-                <marker date="1512524196011" expanded="true" signature="1295:1367" ph="select id,us... tb_userinfo" />
-                <marker date="1512524196011" expanded="true" signature="1773:1850" ph="select id,us... " />
-                <marker date="1512524196011" expanded="true" signature="2232:2309" ph="select id,us... tb_userinfo" />
-                <marker date="1512524196011" expanded="true" signature="2232:2326" ph="select id,us... user" />
-                <marker date="1512524196011" expanded="true" signature="2752:2811" ph="insert into tb_userInfo... " />
-                <marker date="1512524196011" expanded="true" signature="2752:2836" ph="insert into tb_userInfo... " />
-                <marker date="1512524196011" expanded="true" signature="3044:3128" ph="insert into user... " />
+                <marker date="1512528968490" expanded="true" signature="1502:1559" ph="select id,us... user" />
+                <marker date="1512528968490" expanded="true" signature="1966:2038" ph="select id,us... tb_userinfo" />
+                <marker date="1512528968490" expanded="true" signature="2444:2521" ph="select id,us... " />
+                <marker date="1512528968490" expanded="true" signature="2903:2980" ph="select id,us... tb_userinfo" />
+                <marker date="1512528968490" expanded="true" signature="2903:2997" ph="select id,us... user" />
+                <marker date="1512528968490" expanded="true" signature="3423:3482" ph="insert into tb_userInfo... " />
+                <marker date="1512528968490" expanded="true" signature="3423:3507" ph="insert into tb_userInfo... " />
+                <marker date="1512528968490" expanded="true" signature="3715:3799" ph="insert into user... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/user.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="53" lean-forward="true" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/data_test.go">
+      <file leaf-file-name="user_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/user_test.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+              <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
               <folding>
                 <element signature="e#15#36#0" expanded="true" />
               </folding>
@@ -174,13 +164,13 @@
         <option value="$PROJECT_DIR$/src/util/token.go" />
         <option value="$PROJECT_DIR$/src/util/token_test.go" />
         <option value="$PROJECT_DIR$/src/demo/xiye.go" />
-        <option value="$PROJECT_DIR$/src/model/user.go" />
         <option value="$PROJECT_DIR$/src/html/show.html" />
         <option value="$PROJECT_DIR$/src/model/data_test.go" />
-        <option value="$PROJECT_DIR$/src/model/data.go" />
         <option value="$PROJECT_DIR$/src/api/oldApi.go" />
         <option value="$PROJECT_DIR$/src/api/restApi.go" />
         <option value="$PROJECT_DIR$/src/main.go" />
+        <option value="$PROJECT_DIR$/src/model/user.go" />
+        <option value="$PROJECT_DIR$/src/model/data.go" />
       </list>
     </option>
   </component>
@@ -482,25 +472,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/data.go">
+    <entry file="file://$PROJECT_DIR$/src/model/user.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="17" column="71" lean-forward="false" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
           <folding>
             <element signature="e#15#110#0" expanded="true" />
-            <marker date="1512524196011" expanded="true" signature="831:888" ph="select id,us... user" />
-            <marker date="1512524196011" expanded="true" signature="1295:1367" ph="select id,us... tb_userinfo" />
-            <marker date="1512524196011" expanded="true" signature="1773:1850" ph="select id,us... " />
-            <marker date="1512524196011" expanded="true" signature="2232:2309" ph="select id,us... tb_userinfo" />
-            <marker date="1512524196011" expanded="true" signature="2232:2326" ph="select id,us... user" />
-            <marker date="1512524196011" expanded="true" signature="2752:2811" ph="insert into tb_userInfo... " />
-            <marker date="1512524196011" expanded="true" signature="2752:2836" ph="insert into tb_userInfo... " />
-            <marker date="1512524196011" expanded="true" signature="3044:3128" ph="insert into user... " />
+            <marker date="1512528968490" expanded="true" signature="1502:1559" ph="select id,us... user" />
+            <marker date="1512528968490" expanded="true" signature="1966:2038" ph="select id,us... tb_userinfo" />
+            <marker date="1512528968490" expanded="true" signature="2444:2521" ph="select id,us... " />
+            <marker date="1512528968490" expanded="true" signature="2903:2980" ph="select id,us... tb_userinfo" />
+            <marker date="1512528968490" expanded="true" signature="2903:2997" ph="select id,us... user" />
+            <marker date="1512528968490" expanded="true" signature="3423:3482" ph="insert into tb_userInfo... " />
+            <marker date="1512528968490" expanded="true" signature="3423:3507" ph="insert into tb_userInfo... " />
+            <marker date="1512528968490" expanded="true" signature="3715:3799" ph="insert into user... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/data_test.go">
+    <entry file="file://$PROJECT_DIR$/src/model/user_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
@@ -520,20 +510,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/data.go">
+    <entry file="file://$PROJECT_DIR$/src/model/user.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
           <folding>
             <element signature="e#15#110#0" expanded="true" />
-            <marker date="1512524196011" expanded="true" signature="831:888" ph="select id,us... user" />
-            <marker date="1512524196011" expanded="true" signature="1295:1367" ph="select id,us... tb_userinfo" />
-            <marker date="1512524196011" expanded="true" signature="1773:1850" ph="select id,us... " />
-            <marker date="1512524196011" expanded="true" signature="2232:2309" ph="select id,us... tb_userinfo" />
-            <marker date="1512524196011" expanded="true" signature="2232:2326" ph="select id,us... user" />
-            <marker date="1512524196011" expanded="true" signature="2752:2811" ph="insert into tb_userInfo... " />
-            <marker date="1512524196011" expanded="true" signature="2752:2836" ph="insert into tb_userInfo... " />
-            <marker date="1512524196011" expanded="true" signature="3044:3128" ph="insert into user... " />
+            <marker date="1512528968490" expanded="true" signature="1502:1559" ph="select id,us... user" />
+            <marker date="1512528968490" expanded="true" signature="1966:2038" ph="select id,us... tb_userinfo" />
+            <marker date="1512528968490" expanded="true" signature="2444:2521" ph="select id,us... " />
+            <marker date="1512528968490" expanded="true" signature="2903:2980" ph="select id,us... tb_userinfo" />
+            <marker date="1512528968490" expanded="true" signature="2903:2997" ph="select id,us... user" />
+            <marker date="1512528968490" expanded="true" signature="3423:3482" ph="insert into tb_userInfo... " />
+            <marker date="1512528968490" expanded="true" signature="3423:3507" ph="insert into tb_userInfo... " />
+            <marker date="1512528968490" expanded="true" signature="3715:3799" ph="insert into user... " />
           </folding>
         </state>
       </provider>
@@ -767,16 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/data_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-          <folding>
-            <element signature="e#15#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/oldApi.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -788,32 +768,6 @@
             <element signature="n#!!block;n#UpdateUser#0" expanded="false" />
             <element signature="n#!!block;n#DeleteUser#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/data.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="128" column="4" lean-forward="true" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
-          <folding>
-            <element signature="e#15#110#0" expanded="true" />
-            <marker date="1512524196011" expanded="true" signature="831:888" ph="select id,us... user" />
-            <marker date="1512524196011" expanded="true" signature="1295:1367" ph="select id,us... tb_userinfo" />
-            <marker date="1512524196011" expanded="true" signature="1773:1850" ph="select id,us... " />
-            <marker date="1512524196011" expanded="true" signature="2232:2309" ph="select id,us... tb_userinfo" />
-            <marker date="1512524196011" expanded="true" signature="2232:2326" ph="select id,us... user" />
-            <marker date="1512524196011" expanded="true" signature="2752:2811" ph="insert into tb_userInfo... " />
-            <marker date="1512524196011" expanded="true" signature="2752:2836" ph="insert into tb_userInfo... " />
-            <marker date="1512524196011" expanded="true" signature="3044:3128" ph="insert into user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/user.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="53" lean-forward="true" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,6 +787,42 @@
           <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="e#13#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/user.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/user_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+          <folding>
+            <element signature="e#15#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/user.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1071">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#15#110#0" expanded="true" />
+            <marker date="1512528968490" expanded="true" signature="1502:1559" ph="select id,us... user" />
+            <marker date="1512528968490" expanded="true" signature="1966:2038" ph="select id,us... tb_userinfo" />
+            <marker date="1512528968490" expanded="true" signature="2444:2521" ph="select id,us... " />
+            <marker date="1512528968490" expanded="true" signature="2903:2980" ph="select id,us... tb_userinfo" />
+            <marker date="1512528968490" expanded="true" signature="2903:2997" ph="select id,us... user" />
+            <marker date="1512528968490" expanded="true" signature="3423:3482" ph="insert into tb_userInfo... " />
+            <marker date="1512528968490" expanded="true" signature="3423:3507" ph="insert into tb_userInfo... " />
+            <marker date="1512528968490" expanded="true" signature="3715:3799" ph="insert into user... " />
           </folding>
         </state>
       </provider>
