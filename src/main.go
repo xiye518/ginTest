@@ -17,10 +17,10 @@ func main() {
 	
 	v1 := r.Group("api/v1")
 	{
-		v1.POST("/login", api.Login)
-		v1.POST("/reg", api.Register)
-		v1.GET("/reg", api.Register)
-		v1.GET("/show", api.ShowAll)
+		v1.POST("/login", api.LoginApi)
+		v1.POST("/reg", api.RegisterApi)
+		v1.GET("/reg", api.RegisterApi)
+		v1.GET("/show", api.ShowAllApi)
 		
 		//v1.POST("/user", API.PostUser)
 		//v1.GET("/user", API.GetUsers)

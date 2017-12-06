@@ -30,7 +30,7 @@ func InitDb() *gorm.DB {
 	return db
 }
 
-func Login(c *gin.Context) {
+func LoginApi(c *gin.Context) {
 	db := InitDb()
 	defer db.Close()
 	
@@ -77,7 +77,7 @@ func Login(c *gin.Context) {
 	//curl -i -X POST -H "Content-Type: application/json" -d "{ \"username\": \"wade\", \"userpwd\": \"123\"}" http://localhost:8080/api/v1/login
 }
 
-func Register(c *gin.Context) {
+func RegisterApi(c *gin.Context) {
 	if c.Request.Method=="GET"{
 		errMsg := gin.H{"error": "请使用正确的post请求!"}
 		log.Println(errMsg)
@@ -145,7 +145,7 @@ func Register(c *gin.Context) {
 	
 }
 
-func ShowAll(c *gin.Context) {
+func ShowAllApi(c *gin.Context) {
 	
 	if cookie, err := c.Request.Cookie("token"); err == nil {
 		//判断token值是否正确
