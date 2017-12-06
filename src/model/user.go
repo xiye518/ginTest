@@ -56,10 +56,10 @@ func init() {
 建表sql:
 CREATE TABLE tb_userInfo(
     id int(9) primary key not null auto_increment,
-    username char(50) not null,
-		userpwd char(20) not null,
-		nickname char(50),
-		uptdate  datetime not null
+    user_name char(50) not null,
+		user_pwd char(20) not null,
+		nick_name char(50),
+		upt_date  datetime not null
 );
 */
 func Query() (users []*User, err error) {
