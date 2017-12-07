@@ -8,14 +8,15 @@ import (
 
 func main() {
 	api.Debug = true
-	r := gin.Default()
+	router := gin.Default()
 	
-	//authrization:=r.Group("/",jwtauth中间件)
+	//regexp.MustCompile(``)
+	//authrization:=router.Group("/",jwtauth中间件)
 	//{
 	//	authrization.Get("user",handleFunc)
 	//}
 	
-	v1 := r.Group("api/v1")
+	v1 := router.Group("api/v1")
 	{
 		v1.POST("/login", api.LoginApi)
 		v1.POST("/reg", api.RegisterApi)
@@ -29,5 +30,5 @@ func main() {
 		//v1.DELETE("/user/:id", API.DeleteUser)
 	}
 	
-	r.Run(":8080")
+	router.Run(":8080")
 }

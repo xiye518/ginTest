@@ -123,6 +123,7 @@ func QueryUsernameExist(username string) (success bool) {
 func QueryOne(username, userpwd string) (bool, *User, error) {
 	var success = false
 	var user *User = &User{}
+	//var user User
 	rows, err := db.Query("select id,user_name,user_pwd,nick_name,upt_date FROM user where user_name = ? and user_pwd = ?", username, userpwd)
 	if err != nil {
 		return success, user, err

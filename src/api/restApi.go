@@ -39,7 +39,7 @@ func LoginApi(c *gin.Context) {
 	
 	//以下为测试api专用
 	var user1 model.User
-	c.Bind(&user1)
+	c.BindJSON(&user1)
 	if user1.UserName != "" {
 		inputName = user1.UserName
 		inputPassword = user1.UserPwd
@@ -74,7 +74,7 @@ func LoginApi(c *gin.Context) {
 		return
 	}
 	
-	//curl -i -X POST -H "Content-Type: application/json" -d "{ \"username\": \"wade\", \"userpwd\": \"123\"}" http://localhost:8080/api/v1/login
+	//curl -i -X POST -H "Content-Type: application/json" -d "{ \"username\": \"xiye\", \"userpwd\": \"123\"}" http://localhost:8080/api/v1/login
 }
 
 func RegisterApi(c *gin.Context) {
