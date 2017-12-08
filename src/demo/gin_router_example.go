@@ -21,7 +21,6 @@ func main() {
 
 	APIv1.Use(MiddlewareA)
 	APIv1.Use(MiddlewareA) //这样User会连续调用两次Handler，因为本质是队列，所以不会覆盖
-	//ToDo Api测试：  curl -i Get http://localhost:7777/v1/AA_A
 	APIv1.GET("AA_A", HandlerA) // MiddlewareA-> MiddlewareA-> HandlerA
 
 	//这样用中间件而不是 APIv1.USE 可以确保不影响其他路由
