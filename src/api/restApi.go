@@ -38,13 +38,19 @@ func LoginApi(c *gin.Context) {
 	inputPassword := c.Request.FormValue("inputPassword")
 	
 	//以下为测试api专用
-	var user1 model.User
-	c.BindJSON(&user1)
-	if user1.UserName != "" {
-		inputName = user1.UserName
-		inputPassword = user1.UserPwd
+	if Debug {
+		var user1 model.User
+		err := c.BindJSON(&user1)
+		if err != nil {
+			c.Next()
+		}else{
+			if user1.UserName != "" {
+				inputName = user1.UserName
+				inputPassword = user1.UserPwd
+			}
+		}
 	}
-	log.Println(inputName,inputPassword)
+	log.Println(inputName, inputPassword)
 	
 	success, user, err := model.QueryOne(inputName, inputPassword)
 	if err != nil {
@@ -78,7 +84,7 @@ func LoginApi(c *gin.Context) {
 }
 
 func RegisterApi(c *gin.Context) {
-	if c.Request.Method=="GET"{
+	if c.Request.Method == "GET" {
 		errMsg := gin.H{"error": "请使用正确的post请求!"}
 		log.Println(errMsg)
 		c.JSON(401, errMsg)
@@ -93,12 +99,18 @@ func RegisterApi(c *gin.Context) {
 	inputNickname := c.Request.FormValue("inputNickname")
 	log.Println(inputName, inputPassword)
 	//以下为测试api专用
-	var user1 model.User
-	c.Bind(&user1)
-	if user1.UserName != "" {
-		inputName = user1.UserName
-		inputPassword = user1.UserPwd
-		inputNickname = user1.NickName
+	if Debug {
+		var user1 model.User
+		err := c.Bind(&user1)
+		if err != nil {
+			c.Next()
+		} else {
+			if user1.UserName != "" {
+				inputName = user1.UserName
+				inputPassword = user1.UserPwd
+				inputNickname = user1.NickName
+			}
+		}
 	}
 	
 	var user = &model.User{
@@ -128,7 +140,7 @@ func RegisterApi(c *gin.Context) {
 			HttpOnly: true,
 		}
 		http.SetCookie(c.Writer, cookie)
-		user.UptDate=NowTime()
+		user.UptDate = NowTime()
 		//插入新用户信息
 		db.Save(&user)
 		// Display JSON result
@@ -146,10 +158,13 @@ func RegisterApi(c *gin.Context) {
 }
 
 func ShowAllApi(c *gin.Context) {
-	
+	//file:///E:/workspace/ginTest/src/html/login.html
+	//http://localhost:8080/api/v1/show
+	//log.Println("ShowAllApi")
 	if cookie, err := c.Request.Cookie("token"); err == nil {
 		//判断token值是否正确
 		token := cookie.Value
+		log.Println(token)
 		if token == "123456" {
 			db := InitDb()
 			// Close connection database
@@ -167,9 +182,31 @@ func ShowAllApi(c *gin.Context) {
 		return
 	}
 	
-	//c.JSON(501, gin.H{"error": "please login,After logging in, you can see the user list!"})
 	c.JSON(501, gin.H{"error": "登录后才能查看用户列表!"})
 	return
+}
+
+func Middleware(c *gin.Context) {
+	if cookie, err := c.Request.Cookie("token"); err == nil {
+		//判断token值是否正确
+		token := cookie.Value
+		if token == "123456" {
+			c.Next()
+			return
+		}
+		//c.JSON(403, gin.H{"error": "Authentication Failed"})
+		//c.Abort()
+		c.AbortWithStatusJSON(403, gin.H{"error": "Authentication Failed"})
+		return
+	}
+	
+	//c.JSON(501, gin.H{"error": "please login,After logging in, you can see the user list!"})
+	//c.JSON(501, gin.H{"error": "登录后才能查看用户列表!"})
+	//c.Abort()
+	c.AbortWithStatusJSON(501, gin.H{"error": "登录后才能查看用户列表!"})
+	return
+	//log.Println("Middleware")
+	//c.Next()
 }
 
 func NowTime() string {

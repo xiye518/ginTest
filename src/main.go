@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	api.Debug = true
+	//api.Debug = true
 	router := gin.Default()
 	
 	//regexp.MustCompile(``)
@@ -20,7 +20,7 @@ func main() {
 	{
 		v1.POST("/login", api.LoginApi)
 		v1.POST("/reg", api.RegisterApi)
-		v1.GET("/reg", api.RegisterApi)
+		//v1.GET("/reg", api.RegisterApi)
 		v1.GET("/show", api.ShowAllApi)
 		
 		//v1.POST("/user", API.PostUser)
