@@ -26,7 +26,7 @@ func TestQueryIsExist(t *testing.T) {
 }
 
 func TestQueryUsernameExist(t *testing.T) {
-	isExist:=QueryUsernameExist("xiye1")
+	isExist:=QueryUsernameExist("xiye")
 	t.Log(isExist)
 }
 

@@ -9,6 +9,7 @@
 需要提供简单的Web展示页面，以及这三个功能对应的REST API，
 RESP API测试可以通过curl命令或者chrome插件postman
 
+
 在web页面中，记录用户登陆状态采用cookie的方式
 在REST API里面，通过token来记录用户登陆状态，具体token的原理参考下oauth规范
 
