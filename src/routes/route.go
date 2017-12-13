@@ -3,8 +3,8 @@ import (
 	"fmt"
 	"net/http"
 	jwt "github.com/dgrijalva/jwt-go"
-	"gopkg.in/gin-gonic/gin.v1"
 	"middleware/jwt"
+	"github.com/gin-gonic/gin"
 )
 func Engine() *gin.Engine {
 	r := gin.Default()

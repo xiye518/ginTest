@@ -4,7 +4,7 @@ import (
 	"model"
 	"log"
 	"strconv"
-	"gopkg.in/gin-gonic/gin.v1"
+	"github.com/gin-gonic/gin"
 )
 
 //新增用户

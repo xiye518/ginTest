@@ -36,6 +36,7 @@ type Token struct {
 func init() {
 	var err error
 	db, err = sql.Open("mysql", "root:123456@tcp(localhost:3306)/gorm?charset=utf8")
+	//db, err = sql.Open("mysql", "jubao:jubao@tcp(localhost:3306)/gorm?charset=utf8")
 	if err != nil {
 		panic(err.Error())
 	}

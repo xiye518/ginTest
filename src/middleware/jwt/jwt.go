@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strings"
 	"time"
-	"github.com/dgrijalva/jwt-go"
-	"gopkg.in/gin-gonic/gin.v1"
+	jwt "github.com/dgrijalva/jwt-go"
+	"github.com/gin-gonic/gin"
 )
 func JWTAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {

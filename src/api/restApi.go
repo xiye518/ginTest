@@ -5,9 +5,9 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"log"
 	"time"
-	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
 	"model"
+	"github.com/gin-gonic/gin"
 )
 
 var Debug bool

@@ -1,9 +1,8 @@
 package main
 
 import (
-	"gopkg.in/gin-gonic/gin.v1"
-	
 	"api"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
