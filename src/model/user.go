@@ -8,31 +8,6 @@ import (
 )
 
 var db *sql.DB
-/*
-	1. 用户注册，并填写用户基本信息，用户基本信息包括用户名、密码、昵称，用户名不得重复
-	2. 用户登录
-	3. 登陆之后可以查看所有已注册的用户列表，未登录状态不能查看用户列表
-*/
-
-type User struct {
-	Id       int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
-	UserName string `gorm:"not null" form:"username" json:"username"`
-	UserPwd  string `gorm:"not null" form:"userpwd" json:"userpwd"`
-	NickName string `gorm:"" form:"nickname" json:"nickname"`
-	UptDate  string `gorm:"not null" form:"uptdate" json:"uptdate"`
-	//Uptdate   *time.Time `gorm:"not null" form:"uptdate" json:"uptdate"`
-}
-
-func (User) TableName() string {
-	return "user"
-}
-
-type Token struct {
-	Id      int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
-	Value   string `gorm:"not null" form:"value" json:"value"`
-	UptDate string `gorm:"not null" form:"uptdate" json:"uptdate"`
-}
-
 func init() {
 	var err error
 	db, err = sql.Open("mysql", "root:123456@tcp(localhost:3306)/gorm?charset=utf8&parseTime=True&loc=Local")
@@ -50,9 +25,27 @@ func init() {
 	
 	log.Println("db connecting success...")
 }
-
-
-
+/*
+	1. 用户注册，并填写用户基本信息，用户基本信息包括用户名、密码、昵称，用户名不得重复
+	2. 用户登录
+	3. 登陆之后可以查看所有已注册的用户列表，未登录状态不能查看用户列表
+*/
+type User struct {
+	Id       int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
+	UserName string `gorm:"not null" form:"username" json:"username"`
+	UserPwd  string `gorm:"not null" form:"userpwd" json:"userpwd"`
+	NickName string `gorm:"" form:"nickname" json:"nickname"`
+	UptDate  string `gorm:"not null" form:"uptdate" json:"uptdate"`
+	//Uptdate   *time.Time `gorm:"not null" form:"uptdate" json:"uptdate"`
+}
+func (User) TableName() string {
+	return "user"
+}
+type Token struct {
+	Id      int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
+	Value   string `gorm:"not null" form:"value" json:"value"`
+	UptDate string `gorm:"not null" form:"uptdate" json:"uptdate"`
+}
 /*
 建表sql:
 CREATE TABLE tb_userInfo(
