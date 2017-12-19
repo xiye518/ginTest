@@ -1,19 +1,54 @@
 package model
 
 import (
-	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"github.com/jinzhu/gorm"
+	"database/sql"
 )
 
 var db *sql.DB
+
+func init() {
+	var err error
+	db, err = sql.Open("mysql", "root:123456@tcp(localhost:3306)/test?charset=utf8&parseTime=True&loc=Local")
+	//db, err = sql.Open("mysql", "jubao:jubao@tcp(localhost:3306)/test?charset=utf8")
+	if err != nil {
+		panic(err.Error())
+	}
+	db.SetMaxOpenConns(10)
+	db.SetConnMaxLifetime(100)
+	
+	err = db.Ping()
+	if err != nil {
+		panic(err.Error())
+	}
+	//CreatTable()
+	
+	log.Println("db connecting success...")
+}
+
+func CreatTable() {
+	db_gorm, err := gorm.Open("mysql", "root:123456@tcp(localhost:3306)/test?charset=utf8&parseTime=True&loc=Local")
+	if err != nil {
+		panic("failed to connect database")
+	}
+	defer db_gorm.Close()
+	
+	if db_gorm.HasTable(User{}) {
+		db_gorm.AutoMigrate(User{})
+	} else {
+		db_gorm.CreateTable(User{})
+	}
+	
+	return
+}
+
 /*
 	1. 用户注册，并填写用户基本信息，用户基本信息包括用户名、密码、昵称，用户名不得重复
 	2. 用户登录
 	3. 登陆之后可以查看所有已注册的用户列表，未登录状态不能查看用户列表
 */
-
 type User struct {
 	Id       int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
 	UserName string `gorm:"not null" form:"username" json:"username"`
@@ -32,26 +67,6 @@ type Token struct {
 	Value   string `gorm:"not null" form:"value" json:"value"`
 	UptDate string `gorm:"not null" form:"uptdate" json:"uptdate"`
 }
-
-func init() {
-	var err error
-	db, err = sql.Open("mysql", "root:123456@tcp(localhost:3306)/gorm?charset=utf8")
-	//db, err = sql.Open("mysql", "jubao:jubao@tcp(localhost:3306)/gorm?charset=utf8")
-	if err != nil {
-		panic(err.Error())
-	}
-	db.SetMaxOpenConns(10)
-	db.SetConnMaxLifetime(100)
-	
-	err = db.Ping()
-	if err != nil {
-		panic(err.Error())
-	}
-	
-	log.Println("db connecting success...")
-}
-
-
 
 /*
 建表sql:

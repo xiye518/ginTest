@@ -14,7 +14,7 @@ var Debug bool
 
 func InitDb() *gorm.DB {
 	var err error
-	db, err := gorm.Open("mysql", "root:123456@tcp(localhost:3306)/gorm?charset=utf8")
+	db, err := gorm.Open("mysql", "root:123456@tcp(localhost:3306)/test?charset=utf8")
 	if err != nil {
 		panic("failed to connect database")
 	}
