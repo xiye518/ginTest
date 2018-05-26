@@ -23,6 +23,8 @@ func init() {
 	if err != nil {
 		panic(err.Error())
 	}
+
+
 	//CreatTable()
 	
 	log.Println("db connecting success...")
@@ -99,7 +101,7 @@ func Query() (users []*User, err error) {
 
 func QueryIsExist(username string) (bool, *User, error) {
 	var user *User = &User{}
-	rows, err := db.Query("select id,user_name,user_pwd,nick_name,upt_date user where user_name = ?", username)
+	rows, err := db.Query("select id,user_name,user_pwd,nick_name,upt_date from user where user_name = ?", username)
 	if err != nil {
 		return false, user, err
 	}
